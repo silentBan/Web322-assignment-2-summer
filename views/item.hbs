@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+      <h2>Items</h2>
+      <hr />
+      <p>TODO: render a list of all post title values here</p>
+  </div>
+</div>
+
+{{#if items.length}}
+<ul>
+  {{#each items}}
+    <li>
+      <h2>{{this.title}}</h2>
+      <p>Description: {{this.description}}</p>
+      <p>Price: ${{this.price}}</p>
+      <p>Category: {{this.category}}</p>
+      {{#if this.published}}
+        <p>Published: Yes</p>
+      {{else}}
+        <p>Published: No</p>
+      {{/if}}
+      {{#if this.featureImage}}
+        <img src="{{this.featureImage}}" alt="{{this.title}}" style="max-width: 200px;">
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+{{else}}
+<p>No items found.</p>
+{{/if}}

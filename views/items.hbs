@@ -1,0 +1,26 @@
+<h1>Items</h1>
+
+{{#if items.length}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Published</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each items}}
+        <tr>
+          <td><a href="/item/{{this.id}}">{{this.title}}</a></td>
+          <td>${{this.price}}</td>
+          <td>{{this.category}}</td>
+          <td>{{#if this.published}}Yes{{else}}No{{/if}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>No items found.</p>
+{{/if}}
